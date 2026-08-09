@@ -1,0 +1,10 @@
+{
+  "description": "ABTalks is a mobile-first platform for college students in India to engage in a 60-day coding challenge, fostering daily project submissions and skill growth.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

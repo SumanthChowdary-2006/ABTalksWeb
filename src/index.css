@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+}
+
+:root {
+  --bg: #0B0F19;
+  --text-main: #F3F4F6;
+  --surface: rgba(17, 24, 39, 0.75);
+  --surface-border: rgba(255, 255, 255, 0.08);
+  --accent-blue: #3b82f6;
+  --accent-purple: #8b5cf6;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --text-main: #0f172a;
+  --surface: rgba(255, 255, 255, 0.92);
+  --surface-border: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  letter-spacing: -0.015em;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+button, a, input, textarea {
+  touch-action: manipulation;
+  font-family: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* Linear / Notion Inspired Glass Cards */
+.glass, .linear-card, .ios-card {
+  background: var(--surface);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border: 1px solid var(--surface-border);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease;
+}
+
+/* Unified Blue-to-Purple Gradient */
+.grad-text {
+  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.grad-btn {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  color: #ffffff !important;
+  border-radius: 14px;
+  font-weight: 700;
+  box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.35);
+  transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
+}
+.grad-btn:hover {
+  opacity: 0.95;
+  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.45);
+}
+.grad-btn:active {
+  transform: scale(0.97);
+}
+
+/* Light Mode Overrides & High Contrast Text Rules */
+[data-theme="light"] .glass,
+[data-theme="light"] .linear-card,
+[data-theme="light"] .ios-card {
+  background: rgba(255, 255, 255, 0.92) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+[data-theme="light"] .text-white,
+[data-theme="light"] .text-neutral-100,
+[data-theme="light"] .text-neutral-200,
+[data-theme="light"] .text-slate-100,
+[data-theme="light"] .text-slate-200 {
+  color: #0f172a !important;
+}
+
+[data-theme="light"] .text-neutral-300,
+[data-theme="light"] .text-neutral-400,
+[data-theme="light"] .text-slate-300,
+[data-theme="light"] .text-slate-400 {
+  color: #475569 !important;
+}
+
+[data-theme="light"] .bg-neutral-900,
+[data-theme="light"] .bg-neutral-950,
+[data-theme="light"] .bg-slate-900,
+[data-theme="light"] .bg-slate-950,
+[data-theme="light"] .bg-\[\#0B0F19\] {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+}
+
+[data-theme="light"] input,
+[data-theme="light"] select,
+[data-theme="light"] textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+[data-theme="light"] .border-white\/10,
+[data-theme="light"] .border-white\/15 {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Streak Pulse */
+@keyframes flame-pulse {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6)); }
+  50% { transform: scale(1.1); filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.8)); }
+}
+.flame {
+  animation: flame-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  display: inline-block;
+}
+
+/* Marquee */
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marquee-inner { animation: marquee 20s linear infinite; }
+
+/* Input Focus */
+input, select, textarea {
+  border-radius: 12px !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+input:focus, select:focus, textarea:focus {
+  outline: none !important;
+  border-color: rgba(139, 92, 246, 0.7) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+}
+
+/* Modal Animations */
+@keyframes slideUpSheet {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.animate-sheet {
+  animation: slideUpSheet 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Bottom Nav active states */
+.nav-active {
+  color: #8b5cf6;
+}
+.nav-inactive {
+  color: #6b7280;
+}

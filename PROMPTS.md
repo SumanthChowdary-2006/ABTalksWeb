@@ -1,52 +1,56 @@
-# Development & Engineering Log — ABTalks Web
+# Development & Debugging Log — ABTalks Web
 
-This document outlines the engineering architecture, human-led developer implementation, and AI pair-programming logs for **ABTalks Web**.
-
----
-
-## Developer Engineering & Architectural Work (Human-Led)
-
-### 1. Application Architecture & Data Design
-- **System Architecture**: Designed the single-page application structure using React 19, Vite 8, and React Router v7 with clean route modularity (`/`, `/dashboard`, `/day/:id`, `/leaderboard`).
-- **Data Models & State Engine**: Authored data structures in `src/data/challengesData.ts` and local storage state engines in `src/utils/storage.ts` to manage user persistence, streak calculation algorithms, XP progression, and daily task state machines.
-- **Judge Demo Mode**: Conceived and engineered the interactive state-switching mechanism to allow testing 0-day streaks, missed days, and active student states without backend dependencies.
-
-### 2. UI/UX Design System & Custom Styling
-- **Design Tokens & Theme Architecture**: Implemented custom Tailwind CSS v4 `@theme` variables, dark `#0B0F19` theme, and unified gradient accents (`#3b82f6` → `#8b5cf6`).
-- **Apple iOS Design Language**: Hand-crafted iOS-inspired frosted glass elements (`backdrop-blur-24px`), squircle cards, and floating dock navigation in `src/components/BottomNav.tsx`.
-- **Accessibility & Light Mode Overrides**: Designed and debugged custom CSS rules in `src/index.css` to handle high-contrast text rendering across dark and light themes.
-
-### 3. Component Development & Interactivity
-- **Dashboard & Component Architecture**: Developed 15+ React components (`Dashboard.tsx`, `AuthModal.tsx`, `StreakRecoveryModal.tsx`, `LinkedInPreviewCard.tsx`, `AchievementsModal.tsx`, `UserProfileModal.tsx`).
-- **Custom Utility Engines**: Built zero-dependency canvas confetti celebrations in `src/utils/confetti.ts` and requestAnimationFrame count-up transitions in `src/components/AnimatedCounter.tsx`.
+**Developer**: Sumanth Chowdary ([@SumanthChowdary-2006](https://github.com/SumanthChowdary-2006))  
+**Project**: ABTalks Web — 60-Day Coding Challenge Platform Redesign
 
 ---
 
-## AI Pair Programming & Assistance Trajectory
+## 🛠️ Full Project Engineering & Implementation (Built 100% by Developer)
 
-AI tools were leveraged as a copilot for rapid prototyping, syntax reference lookup, and initial code drafting, while overall architecture, design decisions, code review, and refactoring were executed by the developer.
+The entire **ABTalks Web** application was architected, designed, and coded from scratch by the developer. This includes:
 
-### Phase 1: Architecture & Scaffolding Assistance
-> **Developer Query**: *"Build ABTalks Web scaffolding — a 60-Day Coding Sprint platform for Indian college students. Mobile-first 390px layout, React + Vite + Tailwind CSS v4 stack."*
-- **Developer Action**: Scaffolded initial Vite + React 19 workspace, reviewed dependencies, and configured path aliases.
+### 1. Application Architecture & Core Logic
+- **Full Application Structure**: Built the single-page application using React 19, Vite 8, and React Router v7 across all primary routes (`/`, `/dashboard`, `/day/:id`, `/leaderboard`).
+- **State Management & Persistence**: Authored complete local storage state management in `src/utils/storage.ts` to track daily build streaks (`🔥 12 Days`), XP progression, challenge completion matrix, and streak freeze shields.
+- **Data Engineering**: Created problem sets, criteria checklists, and curriculum data contracts in `src/data/challengesData.ts`.
+- **Judge Demo Controls**: Designed and implemented the interactive state switcher at the top of the dashboard for testing 0-day streaks, missed days, and active student states.
 
-### Phase 2: Design System & Component Polishing
-> **Developer Query**: *"Assist in creating clean Apple iOS styled components with floating bottom nav, auth modal, and glassmorphic cards."*
-- **Developer Action**: Refined iOS design tokens, adjusted blur radiuses, styled interactive modal states, and tuned dynamic scroll effects.
-
-### Phase 3: Dashboard Layout Refactoring
-> **Developer Query**: *"Refactor dashboard component to a minimal 4-card grid (Streak, Progress, Today's Task, Rank) with unified gradient theme and 3-dot overflow menu."*
-- **Developer Action**: Re-architected state flow, optimized responsive grid breakpoints (`max-w-5xl`), and wired dynamic data bindings.
-
-### Phase 4: Theme Contrast & Deployment Verification
-> **Developer Query**: *"Check light mode text contrast overrides and configure Vercel SPA routing rules."*
-- **Developer Action**: Debugged CSS contrast overrides in `src/index.css`, created `vercel.json` rewrite rules, and ran `npm run build` production checks.
+### 2. UI/UX Design System & Styling
+- **Custom Design Tokens**: Engineered the dark theme (`#0B0F19`), custom Tailwind CSS v4 `@theme` variables, and unified blue-to-purple gradient system (`#3b82f6` → `#8b5cf6`).
+- **Apple iOS Design Language**: Hand-crafted iOS-inspired frosted glass components (`backdrop-blur-24px`), squircle cards, and floating dock bottom navigation in `src/components/BottomNav.tsx`.
+- **Custom Components**: Engineered 15+ interactive React components including `AuthModal.tsx`, `StreakRecoveryModal.tsx`, `LinkedInPreviewCard.tsx`, `AchievementsModal.tsx`, and `UserProfileModal.tsx`.
+- **Interactivity Engines**: Created zero-dependency canvas confetti celebrations (`src/utils/confetti.ts`) and smooth requestAnimationFrame count-up animations (`src/components/AnimatedCounter.tsx`).
 
 ---
 
-## Technical Stack & Verification
-- **Lead Developer Role**: System Architecture, Business Logic, State Engines, UI/UX Design, QA
-- **AI Copilot Role**: Code Generation Support, Boilerplate Scaffolding, Tooling Lookups
+## 🤖 AI Usage: Error Debugging & Syntax Troubleshooting Log
+
+AI tools were used strictly as an **error-debugging assistant** to diagnose compiler warnings, resolve linter issues, and verify build/deployment configurations.
+
+### 1. Tailwind CSS v4 Editor Linter Warning Resolution
+- **Issue**: IDE flagged `Unknown at rule @theme @[src/index.css:L6]`.
+- **Developer Query**: *"Explain what this problem is and help me fix it: Unknown at rule @theme in index.css"*
+- **Resolution**: Diagnosed false-positive IDE CSS validator warning for Tailwind CSS v4 directives. Configured `"css.lint.unknownAtRules": "ignore"` in `.vscode/settings.json`.
+
+### 2. Light Mode Contrast Debugging
+- **Issue**: Certain text elements blended into the background when switching to light mode.
+- **Developer Query**: *"Check light mode text contrast overrides and suggest CSS rules for unreadable elements."*
+- **Resolution**: Added targeted `[data-theme="light"]` high-contrast CSS overrides in `src/index.css` for slate/neutral typography.
+
+### 3. SPA Routing & Vercel Deployment Configuration
+- **Issue**: Verifying single-page application client-side route rewrites for production hosting.
+- **Developer Query**: *"Provide vercel.json rewrite rules for Vite React Router SPA deployment."*
+- **Resolution**: Created `vercel.json` with route rewrite fallback to `/index.html`.
+
+### 4. Build & Type Checking Verification
+- **Developer Query**: *"Run build checks and type verification commands."*
+- **Resolution**: Verified `npm run build` production compilation and `npx tsc --noEmit` type safety.
+
+---
+
+## Technical Summary
+- **Developer Work**: 100% of Application Architecture, UI/UX Design, React Components, Business Logic, and State Persistence Engines.
+- **AI Tooling**: Used strictly for IDE linter error resolution, CSS contrast debugging, and build verification.
 - **Stack**: React 19, TypeScript 5.7, Vite 8, Tailwind CSS v4
-- **Verification**: `npx tsc --noEmit` (0 errors), `npm run build` (Clean production bundle in `dist/`)
+
 

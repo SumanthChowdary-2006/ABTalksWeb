@@ -2,6 +2,9 @@
 
 A mobile-first, high-performance web platform built for Indian college students participating in a 60-day daily coding sprint. Students build a project every day, submit GitHub & LinkedIn proof of work, maintain their streak, and get discovered by top recruiters.
 
+**Author**: [SumanthChowdary-2006](https://github.com/SumanthChowdary-2006)  
+**Repository**: [github.com/SumanthChowdary-2006/ABTalksWeb](https://github.com/SumanthChowdary-2006/ABTalksWeb)
+
 ---
 
 ## 📍 Route Map

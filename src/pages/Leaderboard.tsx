@@ -34,16 +34,16 @@ const tabs = ['All', 'My Region', 'Friends']
 function Avatar({ name, isMe, rank }: { name: string; isMe?: boolean; rank: number }) {
   const initials = name.split(' ').map(n => n[0]).join('').slice(0, 2)
   const colors = [
-    'linear-gradient(135deg,#3b82f6,#6366f1)',
-    'linear-gradient(135deg,#8b5cf6,#ec4899)',
-    'linear-gradient(135deg,#06b6d4,#3b82f6)',
-    'linear-gradient(135deg,#10b981,#3b82f6)',
+    'linear-gradient(135deg,#fbbf24,#f59e0b)',
+    'linear-gradient(135deg,#f59e0b,#d97706)',
+    'linear-gradient(135deg,#d97706,#b45309)',
+    'linear-gradient(135deg,#eab308,#ca8a04)',
     'linear-gradient(135deg,#f59e0b,#ef4444)',
   ]
   return (
     <div
-      className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0"
-      style={{ background: isMe ? 'linear-gradient(135deg,#3b82f6,#7c3aed)' : colors[rank % colors.length] }}
+      className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-black flex-shrink-0 text-slate-950"
+      style={{ background: isMe ? 'linear-gradient(135deg,#fbbf24,#f59e0b)' : colors[rank % colors.length] }}
     >
       {initials}
     </div>
@@ -65,7 +65,7 @@ export default function Leaderboard() {
         />
         <div
           className="absolute w-[300px] h-[300px] bottom-10 -right-20 opacity-15"
-          style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.5) 0%, transparent 65%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(217,119,6,0.5) 0%, transparent 65%)' }}
         />
       </div>
 
@@ -75,14 +75,14 @@ export default function Leaderboard() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => navigate('/dashboard')}
-              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0"
-              style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.07)' }}
+              className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 text-amber-400"
+              style={{ background: 'rgba(245,158,11,0.08)', border: '1px solid rgba(245,158,11,0.2)' }}
             >
               ←
             </button>
             <div>
-              <h1 className="text-xl font-black">Leaderboard 🏆</h1>
-              <p className="text-xs" style={{ color: '#334155' }}>2,400 active students · Week 2</p>
+              <h1 className="text-xl font-black text-white">Leaderboard 🏆</h1>
+              <p className="text-xs text-neutral-400">2,400 active students · Week 2</p>
             </div>
           </div>
           <ThemeToggle />
@@ -90,14 +90,14 @@ export default function Leaderboard() {
 
         {/* My rank banner */}
         <div
-          className="rounded-2xl px-5 py-4 mb-6 flex items-center gap-4"
+          className="rounded-2xl px-5 py-4 mb-6 flex items-center gap-4 shadow-lg shadow-amber-500/10"
           style={{
-            background: 'linear-gradient(135deg, rgba(99,102,241,0.18), rgba(124,58,237,0.18))',
-            border: '1px solid rgba(99,102,241,0.25)',
+            background: 'linear-gradient(135deg, rgba(245,158,11,0.2), rgba(217,119,6,0.15))',
+            border: '1px solid rgba(245,158,11,0.3)',
           }}
         >
           <div
-            className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black"
+            className="w-10 h-10 rounded-full flex items-center justify-center text-sm font-black text-slate-950"
             style={{ background: 'linear-gradient(135deg,#3b82f6,#7c3aed)' }}
           >
             AK

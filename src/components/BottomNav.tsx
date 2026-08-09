@@ -30,7 +30,7 @@ function DashIcon({ active }: { active: boolean }) {
 function TrophyIcon({ active }: { active: boolean }) {
   return (
     <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={active ? '2.5' : '2'} strokeLinecap="round" strokeLinejoin="round">
-      <path d="M8 21h8M12 17v4M17 3H7l1 8a4 4 0 008 0l1-8z" fill={active ? 'rgba(10,132,255,0.2)' : 'none'} />
+      <path d="M8 21h8M12 17v4M17 3H7l1 8a4 4 0 008 0l1-8z" fill={active ? 'rgba(245,158,11,0.25)' : 'none'} />
       <path d="M17 3c0 0 3 0 3 4s-3 4-3 4M7 3c0 0-3 0-3 4s3 4 3 4" />
     </svg>
   )
@@ -52,9 +52,9 @@ export default function BottomNav() {
   return (
     <div className="fixed bottom-4 left-0 right-0 z-50 px-4 pointer-events-none">
       <nav
-        className="max-w-md mx-auto w-full pointer-events-auto rounded-full p-1.5 border border-white/15 dark:border-white/15 shadow-2xl shadow-black/80"
+        className="max-w-md mx-auto w-full pointer-events-auto rounded-full p-1.5 border border-amber-500/20 dark:border-amber-500/25 shadow-2xl shadow-black/90"
         style={{
-          background: 'rgba(28, 28, 30, 0.78)',
+          background: 'rgba(20, 24, 35, 0.85)',
           backdropFilter: 'blur(36px) saturate(190%)',
           WebkitBackdropFilter: 'blur(36px) saturate(190%)',
         }}
@@ -67,7 +67,7 @@ export default function BottomNav() {
                 key={path}
                 onClick={() => navigate(path)}
                 className={`relative flex flex-col items-center gap-0.5 px-5 py-1.5 rounded-full transition-all duration-200 active:scale-90 ${
-                  active ? 'text-[#0a84ff] font-semibold' : 'text-neutral-400 hover:text-neutral-200'
+                  active ? 'text-[#f59e0b] font-semibold' : 'text-neutral-400 hover:text-neutral-200'
                 }`}
                 style={{ minWidth: 64 }}
               >
@@ -77,7 +77,7 @@ export default function BottomNav() {
                 </span>
                 {active && (
                   <span
-                    className="absolute -bottom-0.5 w-1.5 h-1.5 rounded-full bg-[#0a84ff] shadow-[0_0_8px_#0a84ff]"
+                    className="absolute -bottom-0.5 w-1.5 h-1.5 rounded-full bg-[#f59e0b] shadow-[0_0_10px_#f59e0b]"
                   />
                 )}
               </button>

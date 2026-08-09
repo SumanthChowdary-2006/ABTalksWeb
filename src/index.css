@@ -11,17 +11,18 @@
 :root {
   --bg: #0B0F19;
   --text-main: #F3F4F6;
-  --surface: rgba(17, 24, 39, 0.75);
-  --surface-border: rgba(255, 255, 255, 0.08);
-  --accent-blue: #3b82f6;
-  --accent-purple: #8b5cf6;
+  --surface: rgba(18, 22, 34, 0.82);
+  --surface-border: rgba(245, 158, 11, 0.18);
+  --accent-gold: #f59e0b;
+  --accent-amber: #d97706;
+  --accent-yellow: #fbbf24;
 }
 
 [data-theme="light"] {
-  --bg: #f8fafc;
+  --bg: #faf8f5;
   --text-main: #0f172a;
-  --surface: rgba(255, 255, 255, 0.92);
-  --surface-border: rgba(0, 0, 0, 0.08);
+  --surface: rgba(255, 255, 255, 0.94);
+  --surface-border: rgba(217, 119, 6, 0.18);
 }
 
 * {
@@ -53,36 +54,36 @@ button, a, input, textarea {
   height: 0px;
 }
 
-/* Linear / Notion Inspired Glass Cards */
+/* Linear / Notion Inspired Glass Cards with Gold Accent */
 .glass, .linear-card, .ios-card {
   background: var(--surface);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid var(--surface-border);
   border-radius: 20px;
-  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(251, 191, 36, 0.15);
   transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, border-color 0.3s ease, box-shadow 0.2s ease;
 }
 
-/* Unified Blue-to-Purple Gradient */
+/* Unified Metallic Gold Gradient */
 .grad-text {
-  background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+  background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 45%, #D97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .grad-btn {
-  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-  color: #ffffff !important;
+  background: linear-gradient(135deg, #FBBF24 0%, #F59E0B 50%, #D97706 100%);
+  color: #0B0F19 !important;
   border-radius: 14px;
-  font-weight: 700;
-  box-shadow: 0 4px 16px 0 rgba(59, 130, 246, 0.35);
+  font-weight: 800;
+  box-shadow: 0 4px 20px 0 rgba(245, 158, 11, 0.4);
   transition: transform 0.15s ease, opacity 0.15s ease, box-shadow 0.2s ease;
 }
 .grad-btn:hover {
-  opacity: 0.95;
-  box-shadow: 0 6px 20px 0 rgba(139, 92, 246, 0.45);
+  opacity: 0.96;
+  box-shadow: 0 6px 25px 0 rgba(245, 158, 11, 0.6);
 }
 .grad-btn:active {
   transform: scale(0.97);
@@ -92,9 +93,9 @@ button, a, input, textarea {
 [data-theme="light"] .glass,
 [data-theme="light"] .linear-card,
 [data-theme="light"] .ios-card {
-  background: rgba(255, 255, 255, 0.92) !important;
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 8px 24px -6px rgba(0, 0, 0, 0.06), inset 0 1px 0 0 rgba(255, 255, 255, 0.9) !important;
+  background: rgba(255, 255, 255, 0.94) !important;
+  border: 1px solid rgba(217, 119, 6, 0.15) !important;
+  box-shadow: 0 8px 24px -6px rgba(217, 119, 6, 0.08), inset 0 1px 0 0 rgba(255, 255, 255, 0.9) !important;
 }
 
 [data-theme="light"] .text-white,
@@ -126,18 +127,18 @@ button, a, input, textarea {
 [data-theme="light"] textarea {
   background-color: #ffffff !important;
   color: #0f172a !important;
-  border-color: rgba(0, 0, 0, 0.15) !important;
+  border-color: rgba(217, 119, 6, 0.2) !important;
 }
 
 [data-theme="light"] .border-white\/10,
 [data-theme="light"] .border-white\/15 {
-  border-color: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(217, 119, 6, 0.12) !important;
 }
 
-/* Streak Pulse */
+/* Streak Flame Pulse */
 @keyframes flame-pulse {
-  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.6)); }
-  50% { transform: scale(1.1); filter: drop-shadow(0 0 14px rgba(59, 130, 246, 0.8)); }
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8)); }
+  50% { transform: scale(1.12); filter: drop-shadow(0 0 18px rgba(251, 191, 36, 1)); }
 }
 .flame {
   animation: flame-pulse 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
@@ -158,8 +159,8 @@ input, select, textarea {
 }
 input:focus, select:focus, textarea:focus {
   outline: none !important;
-  border-color: rgba(139, 92, 246, 0.7) !important;
-  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.8) !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.25) !important;
 }
 
 /* Modal Animations */
@@ -173,8 +174,9 @@ input:focus, select:focus, textarea:focus {
 
 /* Bottom Nav active states */
 .nav-active {
-  color: #8b5cf6;
+  color: #f59e0b;
 }
 .nav-inactive {
-  color: #6b7280;
+  color: #9ca3af;
 }
+

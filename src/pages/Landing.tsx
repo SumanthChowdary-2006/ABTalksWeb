@@ -70,7 +70,7 @@ export default function Landing() {
       {/* Top Dynamic Scroll Progress Bar */}
       <div className="fixed top-0 left-0 right-0 h-1 z-50 bg-neutral-900/50">
         <div
-          className="h-full bg-gradient-to-r from-[#0a84ff] via-[#5e5ce6] to-[#bf5af2] transition-all duration-150 ease-out"
+          className="h-full bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#d97706] transition-all duration-150 ease-out"
           style={{ width: `${scrollProgress}%` }}
         />
       </div>
@@ -80,13 +80,13 @@ export default function Landing() {
         <div
           className="absolute w-[600px] h-[600px] -top-40 left-1/2 -translate-x-1/2 opacity-25 rounded-full blur-3xl transition-transform duration-700"
           style={{
-            background: 'radial-gradient(circle, rgba(10,132,255,0.4) 0%, transparent 70%)',
+            background: 'radial-gradient(circle, rgba(245,158,11,0.35) 0%, transparent 70%)',
             transform: `translate(-50%, ${scrollProgress * 0.5}px)`
           }}
         />
         <div
           className="absolute w-[500px] h-[500px] top-[45%] -right-40 opacity-20 rounded-full blur-3xl"
-          style={{ background: 'radial-gradient(circle, rgba(191,90,242,0.35) 0%, transparent 70%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(217,119,6,0.3) 0%, transparent 70%)' }}
         />
       </div>
 
@@ -94,13 +94,13 @@ export default function Landing() {
       <header
         className={`sticky top-0 z-40 w-full transition-all duration-300 ${
           isScrolled
-            ? 'bg-neutral-950/80 backdrop-blur-2xl border-b border-white/10 py-3 shadow-xl'
+            ? 'bg-neutral-950/80 backdrop-blur-2xl border-b border-amber-500/20 py-3 shadow-xl'
             : 'bg-transparent py-5'
         }`}
       >
         <div className="max-w-5xl mx-auto px-4 sm:px-6 flex items-center justify-between">
           <div className="flex items-center gap-2.5 cursor-pointer group" onClick={() => navigate('/')}>
-            <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-[#0a84ff] to-[#5e5ce6] flex items-center justify-center font-black text-sm text-white shadow-lg group-hover:scale-105 transition-transform">
+            <div className="w-9 h-9 rounded-2xl bg-gradient-to-br from-[#fbbf24] via-[#f59e0b] to-[#d97706] flex items-center justify-center font-black text-sm text-slate-950 shadow-lg shadow-amber-500/30 group-hover:scale-105 transition-transform">
               AB
             </div>
             <span className="font-extrabold text-base tracking-tight text-white">ABTalks Web</span>
@@ -110,19 +110,19 @@ export default function Landing() {
             {/* Auth Buttons */}
             <button
               onClick={() => openAuth('login')}
-              className="text-xs font-semibold px-3.5 py-2 rounded-full border border-white/15 bg-neutral-900/60 hover:bg-neutral-800 text-neutral-200 active:scale-95 transition-all"
+              className="text-xs font-semibold px-3.5 py-2 rounded-full border border-amber-500/20 bg-neutral-900/60 hover:bg-neutral-800 text-neutral-200 active:scale-95 transition-all"
             >
               Sign In
             </button>
             <button
               onClick={() => openAuth('register')}
-              className="text-xs font-bold px-4 py-2 rounded-full bg-[#0a84ff] hover:bg-[#007aff] text-white shadow-lg shadow-[#0a84ff]/30 active:scale-95 transition-all"
+              className="text-xs font-extrabold px-4 py-2 rounded-full bg-gradient-to-r from-[#fbbf24] via-[#f59e0b] to-[#d97706] hover:opacity-95 text-slate-950 shadow-lg shadow-amber-500/30 active:scale-95 transition-all"
             >
               Register Free
             </button>
             <button
               onClick={() => navigate('/leaderboard')}
-              className="hidden sm:inline-flex text-xs font-semibold px-3 py-2 rounded-full bg-neutral-900/40 border border-white/10 hover:bg-neutral-800 text-neutral-300"
+              className="hidden sm:inline-flex text-xs font-semibold px-3 py-2 rounded-full bg-neutral-900/40 border border-amber-500/20 hover:bg-neutral-800 text-amber-400"
             >
               🏆 Ranks
             </button>
@@ -135,7 +135,7 @@ export default function Landing() {
 
         {/* Live Active Student Badge */}
         <div className="flex justify-center mb-6 animate-fadeIn">
-          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#0a84ff]/10 border border-[#0a84ff]/25 text-[#0a84ff] shadow-sm">
+          <div className="flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold bg-[#f59e0b]/10 border border-[#f59e0b]/30 text-[#f59e0b] shadow-sm">
             <span className="w-2 h-2 rounded-full bg-[#30d158] inline-block shadow-[0_0_8px_#30d158]" />
             2,400+ active student builders across 120+ Indian Colleges
           </div>
@@ -157,9 +157,9 @@ export default function Landing() {
         {/* iOS Stats Card */}
         <div className="ios-card rounded-[28px] p-6 mb-8 max-w-2xl mx-auto w-full grid grid-cols-3 gap-4">
           {[
-            { val: '2,400+', label: 'Active Students', color: '#0a84ff' },
-            { val: '60 Days', label: 'Coding Sprint', color: '#5e5ce6' },
-            { val: '94%', label: 'Offer Rate', color: '#bf5af2' },
+            { val: '2,400+', label: 'Active Students', color: '#fbbf24' },
+            { val: '60 Days', label: 'Coding Sprint', color: '#f59e0b' },
+            { val: '94%', label: 'Offer Rate', color: '#d97706' },
           ].map(({ val, label, color }) => (
             <div key={label} className="text-center">
               <div className="text-2xl sm:text-3xl font-extrabold mb-0.5 tracking-tight" style={{ color }}>{val}</div>
@@ -172,13 +172,13 @@ export default function Landing() {
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto w-full mb-10">
           <button
             onClick={() => openAuth('register')}
-            className="grad-btn w-full sm:w-auto px-8 py-3.5 rounded-full font-bold text-white text-sm shadow-xl active:scale-95"
+            className="grad-btn w-full sm:w-auto px-8 py-3.5 rounded-full font-extrabold text-slate-950 text-sm shadow-xl active:scale-95"
           >
             <span>Start My 60-Day Streak 🔥</span>
           </button>
           <button
             onClick={() => navigate('/dashboard')}
-            className="w-full sm:w-auto px-6 py-3.5 rounded-full text-xs font-semibold transition-all bg-neutral-900/60 border border-white/15 hover:bg-neutral-800 text-neutral-200 active:scale-95"
+            className="w-full sm:w-auto px-6 py-3.5 rounded-full text-xs font-semibold transition-all bg-neutral-900/60 border border-amber-500/20 hover:bg-neutral-800 text-amber-300 active:scale-95"
           >
             View Dashboard →
           </button>
@@ -192,7 +192,7 @@ export default function Landing() {
               {marqueeItems.map((item, i) => (
                 <span
                   key={i}
-                  className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-neutral-900/70 border border-white/10 text-neutral-200"
+                  className="inline-flex items-center px-4 py-2 rounded-full text-xs font-semibold bg-neutral-900/70 border border-amber-500/15 text-neutral-200"
                 >
                   {item}
                 </span>
@@ -210,10 +210,10 @@ export default function Landing() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {steps.map((s) => (
-              <div key={s.step} className="ios-card rounded-[24px] p-5 flex flex-col justify-between hover:border-[#0a84ff]/40 transition-all group">
+              <div key={s.step} className="ios-card rounded-[24px] p-5 flex flex-col justify-between hover:border-amber-500/50 transition-all group">
                 <div className="flex items-center justify-between mb-4">
-                  <span className="font-mono text-xs font-bold text-[#0a84ff]">{s.step}</span>
-                  <div className="w-10 h-10 rounded-2xl bg-[#0a84ff]/10 border border-[#0a84ff]/20 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
+                  <span className="font-mono text-xs font-bold text-[#f59e0b]">{s.step}</span>
+                  <div className="w-10 h-10 rounded-2xl bg-[#f59e0b]/10 border border-[#f59e0b]/25 flex items-center justify-center text-xl group-hover:scale-110 transition-transform">
                     {s.icon}
                   </div>
                 </div>
@@ -232,7 +232,7 @@ export default function Landing() {
             <p className="text-sm font-bold text-white tracking-tight">Top Builders This Week</p>
             <button
               onClick={() => navigate('/leaderboard')}
-              className="text-xs font-semibold text-[#0a84ff] hover:underline"
+              className="text-xs font-semibold text-[#f59e0b] hover:underline"
             >
               See Leaderboard →
             </button>
@@ -243,9 +243,9 @@ export default function Landing() {
                 <div
                   className="w-8 h-8 rounded-xl flex items-center justify-center text-xs font-black flex-shrink-0 shadow-md"
                   style={
-                    i === 0 ? { background: 'linear-gradient(135deg,#ffd60a,#ff9f0a)', color: '#000' }
+                    i === 0 ? { background: 'linear-gradient(135deg,#fbbf24,#f59e0b)', color: '#000' }
                       : i === 1 ? { background: 'linear-gradient(135deg,#e5e5ea,#8e8e93)', color: '#000' }
-                      : { background: 'linear-gradient(135deg,#ff9f0a,#ac4e00)', color: '#fff' }
+                      : { background: 'linear-gradient(135deg,#d97706,#b45309)', color: '#fff' }
                   }
                 >
                   #{i + 1}
@@ -255,7 +255,7 @@ export default function Landing() {
                   <p className="text-[10px] text-neutral-400 truncate">{b.college}</p>
                 </div>
                 <div className="text-right flex-shrink-0">
-                  <p className="text-xs font-bold text-[#ff9f0a]">🔥 {b.streak}</p>
+                  <p className="text-xs font-bold text-[#f59e0b]">🔥 {b.streak}</p>
                   <p className="text-[9px] text-neutral-400">streak</p>
                 </div>
               </div>
@@ -265,7 +265,7 @@ export default function Landing() {
 
         {/* Social Links */}
         <div className="mb-10 rounded-[28px] p-6 ios-card text-center relative overflow-hidden max-w-3xl mx-auto w-full">
-          <p className="text-xs font-bold tracking-widest uppercase mb-5 text-[#0a84ff]">
+          <p className="text-xs font-bold tracking-widest uppercase mb-5 text-[#f59e0b]">
             Follow ABTalks on AI
           </p>
 
@@ -274,14 +274,14 @@ export default function Landing() {
               href="https://www.linkedin.com/company/abtalks-on-ai"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-between p-3.5 rounded-2xl bg-neutral-900/60 border border-white/10 hover:bg-neutral-800 transition-all group"
+              className="flex items-center justify-between p-3.5 rounded-2xl bg-neutral-900/60 border border-amber-500/15 hover:bg-neutral-800 transition-all group"
             >
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-8 h-8 rounded-xl bg-[#0a84ff]/20 border border-[#0a84ff]/30 flex items-center justify-center text-[#0a84ff] font-bold text-xs flex-shrink-0">
+                <div className="w-8 h-8 rounded-xl bg-[#f59e0b]/20 border border-[#f59e0b]/30 flex items-center justify-center text-[#f59e0b] font-bold text-xs flex-shrink-0">
                   in
                 </div>
                 <div className="text-left min-w-0">
-                  <p className="text-xs font-bold text-white group-hover:text-[#0a84ff] transition-colors">LinkedIn</p>
+                  <p className="text-xs font-bold text-white group-hover:text-[#f59e0b] transition-colors">LinkedIn</p>
                   <p className="text-[10px] text-neutral-400 truncate">ABTalks on AI</p>
                 </div>
               </div>

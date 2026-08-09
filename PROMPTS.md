@@ -19,7 +19,7 @@ The entire **ABTalks Web** application was architected, designed, and coded from
 - **Custom Design Tokens**: Engineered the dark theme (`#0B0F19`), custom Tailwind CSS v4 `@theme` variables, and unified blue-to-purple gradient system (`#3b82f6` → `#8b5cf6`).
 - **Apple iOS Design Language**: Hand-crafted iOS-inspired frosted glass components (`backdrop-blur-24px`), squircle cards, and floating dock bottom navigation in `src/components/BottomNav.tsx`.
 - **Custom Components**: Engineered 15+ interactive React components including `AuthModal.tsx`, `StreakRecoveryModal.tsx`, `LinkedInPreviewCard.tsx`, `AchievementsModal.tsx`, and `UserProfileModal.tsx`.
-- **Interactivity Engines**: Created zero-dependency canvas confetti celebrations (`src/utils/confetti.ts`) and smooth requestAnimationFrame count-up animations (`src/components/AnimatedCounter.tsx`).
+- **Interactivity Engines**: Created zero-dependency canvas confetti celebrations (`src/utils/confetti.ts`) and smooth `requestAnimationFrame` count-up animations (`src/components/AnimatedCounter.tsx`).
 
 ---
 
@@ -28,7 +28,7 @@ The entire **ABTalks Web** application was architected, designed, and coded from
 AI tools were used strictly as an **error-debugging assistant** to diagnose compiler warnings, resolve linter issues, and verify build/deployment configurations.
 
 ### 1. Tailwind CSS v4 Editor Linter Warning Resolution
-- **Issue**: IDE flagged `Unknown at rule @theme @[src/index.css:L6]`.
+- **Issue**: IDE flagged `Unknown at rule @theme` in `src/index.css`.
 - **Developer Query**: *"Explain what this problem is and help me fix it: Unknown at rule @theme in index.css"*
 - **Resolution**: Diagnosed false-positive IDE CSS validator warning for Tailwind CSS v4 directives. Configured `"css.lint.unknownAtRules": "ignore"` in `.vscode/settings.json`.
 
@@ -52,5 +52,6 @@ AI tools were used strictly as an **error-debugging assistant** to diagnose comp
 - **Developer Work**: 100% of Application Architecture, UI/UX Design, React Components, Business Logic, and State Persistence Engines.
 - **AI Tooling**: Used strictly for IDE linter error resolution, CSS contrast debugging, and build verification.
 - **Stack**: React 19, TypeScript 5.7, Vite 8, Tailwind CSS v4
+
 
 
